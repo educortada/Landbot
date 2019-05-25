@@ -1,0 +1,13 @@
+:root{
+  --color-white: #ffffff;
+  --color-white-opacity-02: rgba(255, 255, 255, .2);
+  --color-text: #cccccc;
+  --color-message-bot: #00bfaa;   /* #1e90ff */
+  --color-message-human: #4c5057;
+  
+  --background-dark-base: #1f242d;
+  --background-dark-lightness-20: #2a303c;
+  --background-dark-lightness-30: #3f485a;
+
+  --border-radius: 24px;
+}

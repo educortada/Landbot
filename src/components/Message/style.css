@@ -1,0 +1,50 @@
+.message{
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.message-text{
+  position: relative;
+  padding: .5rem 1rem;
+  background: var(--color-bot);
+  color: var(--color-white);
+  border-radius: var(--border-radius);
+  width: fit-content;
+}
+
+.message-text:after{
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+  top: 0;
+	border: 12px solid;
+}
+
+/* Modifiers */
+
+.message.is-human{
+  justify-content: flex-end;
+}
+
+.message.is-bot{
+  justify-content: flex-start;
+}
+
+.is-human .message-text{
+  background: var(--color-message-human);
+}
+
+.is-human .message-text:after{
+  right: -6px;
+  border-color: var(--color-message-human) transparent transparent transparent;
+}
+
+.is-bot .message-text{
+  background: var(--color-message-bot);
+}
+
+.is-bot .message-text:after{
+  left: -6px;
+  border-color: var(--color-message-bot) transparent transparent transparent;
+}

@@ -1,0 +1,25 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body, h1, h2, h3, h4, h5, h6,
+ul, ol, li, p, textarea, hr {
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+a, button{
+  cursor: pointer;
+}
+
+button:focus{
+  outline: 0;
+}
