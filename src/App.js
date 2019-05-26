@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import core from './lib/core'
 
 // Helpers
-import { sortMessages } from './helpers'
+import { sortMessages, updateChatScrollBottom } from './helpers'
 
 // Font Awesome
 import '@fortawesome/fontawesome-free/css/all.css'
@@ -40,10 +40,11 @@ class App extends Component {
         this.setState({
           messages: [...this.state.messages, message]
         })
+        // Update scroll from chat container after new message.
+        updateChatScrollBottom()
       })
     } catch (error) {
       this.setState({ status: 'hasError' })
-      console.log(error)
     }
   }
 
@@ -62,7 +63,7 @@ class App extends Component {
             <header className="chat-header">
               <h1>Landbot.io</h1>
             </header>
-            <main className="chat-container">
+            <main id="chat-container" className="chat-container">
               <Message messages={messages} />
             </main>
             <footer className="chat-footer">
