@@ -7,6 +7,7 @@ class index extends Component {
       <section>
         {
           this.props.messages.map(message => {
+            console.log('message', message)
             return <Message key={message.key} message={message} />
           })
         }

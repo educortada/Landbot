@@ -1,3 +1,10 @@
+.chat-container{
+  padding: 2rem 1rem 1rem;
+  height: 500px;
+  overflow: scroll;
+  background: var(--background-dark-lightness-20);
+}
+
 .message{
   display: flex;
   margin-bottom: 1rem;
@@ -36,7 +43,7 @@
 }
 
 .is-human .message-text:after{
-  right: -6px;
+  right: -3px;
   border-color: var(--color-message-human) transparent transparent transparent;
 }
 
@@ -45,6 +52,6 @@
 }
 
 .is-bot .message-text:after{
-  left: -6px;
+  left: -3px;
   border-color: var(--color-message-bot) transparent transparent transparent;
 }

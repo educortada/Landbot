@@ -1,0 +1,62 @@
+/* ---- Font ---- */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+/* ---- Global ---- */
+
+body {
+  color: var(--color-text);
+  background: var(--background-dark-base);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 147%;
+}
+
+.chat{
+  margin: 2rem auto;
+  width: 414px;
+}
+
+.chat-header{
+  padding: 1.5rem 1rem;
+  border-radius: var(--border-radius) var(--border-radius) 0 0; 
+  background: var(--background-dark-lightness-30);
+  text-align: center;
+}
+
+/* ---- Spinner ---- */
+
+.spinner-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid var(--color-message-bot);
+  border-color: var(--color-message-bot) transparent var(--color-message-bot) transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
