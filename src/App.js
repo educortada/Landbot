@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 // Landbot Core
 import core from './lib/core'
 
+// Helpers
+import { sortMessages } from './helpers'
+
 // Font Awesome
 import '@fortawesome/fontawesome-free/css/all.css'
 
@@ -21,27 +24,19 @@ class App extends Component {
     messages: []
   }
 
-  parseMessages = (messages) => {
-    for (const key in messages) {
-      const message = messages[key]
-      console.log('data', message)
-      this.setState({
-        messages: [...this.state.messages, message]
-      })
-    }
-  }
-
   componentDidMount = async () => {
     try {
-      // Returns a Promise with previous conversation messages.
+      // Returns a Promise with previous messages.
       const data = await core.init()
-      this.setState({ status: 'isReady' })
-      // console.log(data.messages)
-      this.parseMessages(data.messages)
+      const previousMessages = sortMessages(data.messages)
+
+      this.setState({
+        status: 'isReady',
+        messages: [...previousMessages]
+      })
 
       // Used to get a sequential flow of messages.
       core.pipelines.$readableSequence.subscribe(message => {
-        // console.log('Pipeline', message)
         this.setState({
           messages: [...this.state.messages, message]
         })

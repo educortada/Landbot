@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+
+// Components
 import Message from './Message'
 
 class index extends Component {
@@ -6,10 +8,9 @@ class index extends Component {
     return (
       <section>
         {
-          this.props.messages.map(message => {
-            console.log('message', message)
-            return <Message key={message.key} message={message} />
-          })
+          this.props.messages.map(message => (
+            <Message key={message.key} message={message} />
+          ))
         }
       </section>
     )
