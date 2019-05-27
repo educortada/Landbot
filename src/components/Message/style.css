@@ -28,6 +28,12 @@
 	border: 12px solid;
 }
 
+.message-text-time{
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin-left: 0.5rem;
+}
+
 /* Modifiers */
 
 .message.is-human{

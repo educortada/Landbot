@@ -8,9 +8,9 @@ class index extends Component {
     return (
       <section>
         {
-          this.props.messages.map(message => (
-            <Message key={message.key} message={message} />
-          ))
+          this.props.messages.map(message => {
+            return (message.type !== 'hidden') && <Message key={message.key} message={message} />
+          })
         }
       </section>
     )
